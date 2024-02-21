@@ -1,0 +1,175 @@
+{
+  "settings": {
+    "name": "guild xyz 2",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2.5,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": [
+        "#00adee"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.0",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "favicon": "@PROJECT_PATH@/assets/images/guild_1.png",
+    "sitemapSwitcher": true,
+    "siteUrl": "https://guildxy-z.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\nSitemap: https://guildxy-z.github.io/sitemap.xml\n\n\n\n",
+    "mbrsiteDomain": "mc6z8n3t2z",
+    "imageResize": false,
+    "usedWebp": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.9.0",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Guild xyz™ | Home Official Site",
+        "meta_descr": "Guild.xyz is a decentralized autonomous organization (DAO) platform that allows teams to collaborate and run work operations in a decentralized and transparent manner.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "flex-direction": "row-reverse"
+            }
+          },
+          "_name": "image01",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#00adee\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/frame-25.png\" alt=\"guild xyz\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\"><b>Guild™ | Home Official Site</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1NuoB1Ovg",
+          "_anchor": "image01-0",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article07\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#00adee\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#00adee\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>Guild XYZ: Revolutionizing Professional Communities and Empowering Collaboration</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Introduction</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In today's dynamic and interconnected world, professional communities play a crucial role in fostering collaboration, knowledge sharing, and career advancement. Enter <a href=\"https://guildxy-z.github.io/\" class=\"text-primary\">Guild&nbsp;XYZ</a>, a groundbreaking platform that is redefining the concept of professional communities. With its innovative features, inclusive environment, and emphasis on collaboration, <a href=\"https://guild.xyz/\" class=\"text-primary\">Guild XYZ</a> offers a transformative space for individuals to connect, learn, and grow. In this article, we will delve into the unique features, benefits, and potential impact of Guild XYZ in revolutionizing professional communities and empowering collaboration.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Understanding Guild XYZ</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ is a cutting-edge platform designed to bring professionals together and facilitate meaningful connections. Unlike traditional professional networks, Guild XYZ goes beyond basic networking by providing a comprehensive suite of tools and resources tailored to professionals across various industries and disciplines. Whether you're a freelancer, entrepreneur, or employee, Guild XYZ offers a virtual space where you can connect with like-minded individuals, access valuable resources, and collaborate on projects.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Building a Collaborative Community</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ places a strong emphasis on collaboration, creating an environment where individuals can connect and collaborate in meaningful ways:<br><br>a. Interest-Based Guilds: Guild XYZ organizes professionals into interest-based guilds, enabling individuals to join communities aligned with their specific areas of expertise or interests. This structure facilitates targeted discussions, knowledge sharing, and collaboration among professionals who share common goals and interests.\n<br>\n<br>b. Discussion Forums and Knowledge Sharing: Guild XYZ provides discussion forums where members can engage in conversations, share insights, and seek advice from peers. These forums foster a vibrant exchange of ideas, allowing professionals to tap into a collective pool of knowledge and expertise.\n<br>\n<br>c. Project Collaboration: Guild XYZ offers a dedicated space for professionals to collaborate on projects. Members can form teams, share resources, and work together on joint initiatives, fostering a collaborative and supportive ecosystem that accelerates professional growth and success.\n<br>\n<br>d. Mentorship Opportunities: Guild XYZ recognizes the importance of mentorship in career development. The platform facilitates mentorship connections, allowing experienced professionals to guide and support emerging talent, fostering a culture of learning and advancement.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Empowering Professional Development</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ is committed to empowering individuals in their professional journeys, offering a range of features aimed at personal and career growth:<br><br>a. Learning Resources: Guild XYZ provides a wealth of learning resources, including webinars, workshops, and educational materials. These resources cover a wide range of topics, from industry trends and best practices to personal development and leadership skills. Members can access these materials to enhance their knowledge and stay ahead in their respective fields.\n<br>\n<br>b. Skill Development and Certification: Guild XYZ offers skill development programs and certifications to help professionals acquire new skills and validate their expertise. These programs are designed in collaboration with industry experts, ensuring their relevance and practicality in the professional landscape.\n<br>\n<br>c. Networking Opportunities: Guild XYZ facilitates networking opportunities through virtual events, conferences, and meetups. Members can connect with industry leaders, potential collaborators, and mentors, expanding their professional network and opening doors to new opportunities.\n<br>\n<br>d. Job Opportunities: Guild XYZ serves as a platform for members to discover job openings and career opportunities. Employers and recruiters can tap into a pool of talented professionals within the guilds, creating a targeted and efficient hiring process.<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Inclusive and Diverse Community</b><b><br></b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ is committed to empowering individuals in their professional journeys, offering a range of features aimed at personal and career growth:&nbsp;<br><br>a. Diversity and Inclusion Initiatives: Guild XYZ actively promotes diversity and inclusion through various initiatives. These include highlighting diverse voices, organizing events centered around underrepresented groups, and providing resources and support for individuals from marginalized backgrounds.\n<br>\n<br>b. Mentorship and Support: Guild XYZ encourages mentorship and support networks to help individuals from diverse backgrounds navigate their professional journeys. By connecting professionals with mentors who understand their unique experiences and challenges, Guild XYZ fosters an environment of support and empowerment.\n<br>\n<br>c. Safe and Respectful Environment: Guild XYZ prioritizes creating a safe and respectful environment for all members. The platform has strict guidelines and policies in place to prevent harassment, discrimination, or any form of disrespectful behavior. This ensures that all individuals can participate and contribute without fear of prejudice or bias.<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Potential Impact of Guild XYZ&nbsp;</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ has the potential to revolutionize professional communities and empower collaboration in several ways:<br><br>a. Enhanced Collaboration: By providing a dedicated platform for professionals to connect and collaborate, Guild XYZ breaks down barriers and facilitates meaningful collaborations that transcend geographical limitations. This can lead to the development of innovative solutions, the formation of strategic partnerships, and the sharing of best practices across industries.\n<br>\n<br>b. Accelerated Knowledge Sharing: Guild XYZ's emphasis on knowledge sharing creates a dynamic ecosystem where professionals can tap into a wealth of insights and expertise. This accelerates the learning process, promotes continuous professional development, and drives industry-wide innovation.\n<br>\n<br>c. Career Advancement Opportunities: The networking, mentorship, and job opportunities facilitated by Guild XYZ can significantly impact career trajectories. Members can leverage the platform toexpand their professional network, gain valuable mentorship, and access job openings that align with their interests and expertise. This can lead to career advancement, new opportunities, and increased professional visibility.\n<br>\n<br>d. Inclusive and Diverse Communities: Guild XYZ's commitment to diversity and inclusion ensures that professionals from all backgrounds have a voice and a platform to thrive. By fostering an inclusive environment, Guild XYZ promotes equal opportunities and empowers individuals who may have faced barriers in traditional professional settings.\n<br>\n<br>e. Industry Transformation: As Guild XYZ continues to grow and attract professionals from diverse industries, it has the potential to drive industry-wide transformation. By connecting professionals across different sectors, Guild XYZ can facilitate cross-pollination of ideas, foster interdisciplinary collaborations, and spark innovation that transcends traditional boundaries.<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Conclusion</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Guild XYZ is revolutionizing the concept of professional communities by providing a dynamic platform that emphasizes collaboration, knowledge sharing, and career development. Through its interest-based guilds, discussion forums, project collaboration spaces, and mentorship opportunities, Guild XYZ creates an environment where professionals can connect, learn from each other, and collaborate on meaningful projects. With its focus on inclusivity and diversity, Guild XYZ ensures that all professionals have access to resources, support, and opportunities for growth.\n<br>\n<br>As Guild XYZ continues to expand, its potential impact on the professional landscape is significant. By accelerating collaboration, knowledge sharing, and career advancement, Guild XYZ has the power to shape industries, drive innovation, and empower professionals from all backgrounds. As professionals seek new ways to connect and thrive in the digital age, Guild XYZ stands at the forefront of revolutionizing professional communities and empowering collaboration for a brighter future.\n<br>\n<br></p>\n              </div>\n            </div>\n          </div>\n          <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n            <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1NupveFeY",
+          "_anchor": "article07-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
